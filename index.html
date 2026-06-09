@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/fix-navbar.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Startup - Startup Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta content="HVAC Algeria, water treatment engineering, industrial plumbing Algeria" name="keywords">
+<meta content="GTE provides engineering solutions in HVAC, water treatment and industrial systems in Algeria" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Translation overlay styles -->
+    <style>
+        #translate-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(9,30,62,0.55); z-index: 99990;
+            align-items: center; justify-content: center;
+            flex-direction: column; gap: 16px; backdrop-filter: blur(3px);
+        }
+        #translate-overlay.active { display: flex; }
+        #translate-overlay .tl-spinner {
+            width: 48px; height: 48px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top-color: #fff; border-radius: 50%;
+            animation: tl-spin 0.7s linear infinite;
+        }
+        #translate-overlay p { color:#fff; font-family:'Rubik',sans-serif; font-size:0.95rem; margin:0; letter-spacing:1px; }
+        @keyframes tl-spin { to { transform: rotate(360deg); } }
+    </style>
+    <!-- ===== Android / mobile responsive enhancements (non-structural, CSS only) ===== -->
+    <style id="gte-mobile-enhancements">
+        /* Prevent horizontal scrolling and keep media inside the viewport */
+        @media (max-width: 991.98px) {
+            html { -webkit-text-size-adjust: 100%; }
+            body { overflow-x: hidden; }
+            img, video, iframe, table { max-width: 100%; }
+            .container, .container-fluid { padding-left: 16px; padding-right: 16px; }
+
+            /* Logo scales down so the header stays compact on phones */
+            .navbar-logo { height: 70px !important; }
+            .navbar.custom-navbar,
+            nav.navbar { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+            /* Collapsed (hamburger) menu: solid, readable, scrollable for long lists */
+            .navbar-collapse {
+                background: #1a2e4a;
+                border-radius: 12px;
+                margin-top: 12px;
+                padding: 8px 14px 14px;
+                max-height: 78vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                box-shadow: 0 12px 40px rgba(0,0,0,.45);
+            }
+            .navbar-nav .nav-link { padding-top: 11px !important; padding-bottom: 11px !important; }
+            .navbar .dropdown-menu { background: rgba(255,255,255,.06); border: 0; }
+            .navbar .dropdown-item { white-space: normal; }
+
+            /* Oversized display headings rescaled so text never overflows on small screens */
+            .display-1 { font-size: 2.3rem !important; line-height: 1.18; word-wrap: break-word; }
+            .display-2 { font-size: 2.0rem !important; line-height: 1.18; }
+            .display-3 { font-size: 1.85rem !important; line-height: 1.2; }
+            .display-4 { font-size: 1.7rem !important; line-height: 1.2; }
+
+            /* Hero carousel caption: keep content padded and CTAs stacked neatly */
+            .carousel-caption { padding-left: 14px; padding-right: 14px; }
+            .carousel-caption .btn { margin-bottom: 8px; }
+
+            /* Embedded maps / videos get a sensible mobile height */
+            iframe[src*="google.com/maps"],
+            iframe[src*="youtube.com"],
+            iframe.h-100 { min-height: 280px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .navbar-logo { height: 58px !important; }
+            .display-1 { font-size: 1.85rem !important; }
+            .display-2 { font-size: 1.7rem !important; }
+            .display-3 { font-size: 1.55rem !important; }
+            .display-4 { font-size: 1.45rem !important; }
+            h1, .h1 { font-size: 1.7rem; }
+            h2, .h2 { font-size: 1.4rem; }
+            .carousel-caption h5 { font-size: 0.85rem; }
+            /* Stack hero buttons full-width for easier tapping */
+            .carousel-caption .btn { display: block; width: 100%; margin-right: 0 !important; }
+        }
+    </style>
+    <!-- ===== end mobile responsive enhancements ===== -->
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Translation Loading Overlay -->
+    <div id="translate-overlay">
+        <div class="tl-spinner"></div>
+        <p id="translate-overlay-msg">Translating…</p>
+    </div>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>   KOUBA ALGER 16000</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+213 770 63 61 06 / +213 770 25 87 44</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>CONTACT@GTE-PROCESS.COM</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1PMKxYqSga/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/gteengineering1?igsh=YXU2MHc0aWx3aDNh"><i class="fab fa-instagram fw-normal"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Carousel Start -->
+    <div class="container-fluid position-relative p-1" style="z-index: 9;">
+       <nav class="navbar navbar-expand-lg navbar-dark custom-navbar px-5 py-4 fixed-top">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/lg fin.png" alt="GTE Logo" class="navbar-logo" style="height: 120px;">
+    </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+
+                    <!-- ── SERVICES DROPDOWN ── -->
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="hvac.html" class="dropdown-item">HVAC Systems</a>
+                            <a href="waterfiltering.html" class="dropdown-item">Water Treatment</a>
+                            <a href="incendie.html" class="dropdown-item">Incendie</a>
+                            <a href="calorifuge.html" class="dropdown-item">Calorifuge</a>
+                            <a href="plomberie.html" class="dropdown-item">Plomberie</a>
+                            <a href="piping.html" class="dropdown-item">Piping</a>
+                        </div>
+                    </div>
+                    <!-- ── END SERVICES DROPDOWN ── -->
+
+                
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="team.html" class="dropdown-item">Team Members</a>
+                            <a href="quote.html" class="dropdown-item">FRee Quote</a>
+                             <a href="gallary2.html" class="dropdown-item">Gallery</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+
+                <!-- Language Switcher (EN / FR only) -->
+                <div style="position:relative; margin-left:12px; z-index:99999;">
+                    <button id="langBtn"
+                        onclick="var m=document.getElementById('gteLangMenu'); m.style.display=m.style.display==='block'?'none':'block'"
+                        style="background:rgba(255,255,255,0.15);
+                               border:1px solid rgba(255,255,255,0.4);
+                               color:#fff; border-radius:6px;
+                               padding:8px 16px; font-size:13px;
+                               font-weight:600; cursor:pointer;">
+                        🌐 EN ▾
+                    </button>
+                    <div id="gteLangMenu"
+                        style="display:none; position:absolute; top:calc(100% + 8px); right:0;
+                               background:#1a2e4a; border:1px solid rgba(255,255,255,0.2);
+                               border-radius:10px; min-width:150px; z-index:99999;
+                               box-shadow:0 12px 40px rgba(0,0,0,0.6); overflow:hidden;">
+                        <a href="javascript:void(0)" onclick="switchLang('en')"
+                            style="display:block; padding:13px 18px; color:#fff; font-size:14px;
+                                   text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            🇬🇧 &nbsp; English
+                        </a>
+                        <a href="javascript:void(0)" onclick="switchLang('fr')"
+                            style="display:block; padding:13px 18px; color:#fff;
+                                   font-size:14px; text-decoration:none;">
+                            🇫🇷 &nbsp; Français
+                        </a>
+                    </div>
+                </div>
+
+                <a href="https://wad-dz.com/" target="_blank" class="btn btn-primary py-2 px-4 ms-3">OUR DEVISIONS</a>
+            </div>
+        </nav>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/bgmain.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Solution Professional</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Groupement De Traitement Des Eaux ET TRAVAUX MEP </h1>
+                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/IMAGE 1 HQ.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Solution Professional</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Groupement de Traitement Des Eaux</h1>
+                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/IMAGE 3 HQ.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">HVAC &amp; Smoke Extraction</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Climate Control &amp; Ventilation Systems</h1>
+                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/IMAGE 4 HQ.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Water Treatment</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Water Filtration &amp; Process Solutions</h1>
+                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/IMAGE 5 HQ.png" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Fire Safety &amp; Piping</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Industrial Protection &amp; Piping Networks</h1>
+                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
+                            <a href="contact.html" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+ 
+            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- Navbar & Carousel End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid facts py-5 pt-lg-0" style="margin-top: 5px;">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.1s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">Happy Clients</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">200</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="bg-light shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-primary mb-0">Projects Done</h5>
+                            <h1 class="mb-0" data-toggle="counter-up">150</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary shadow d-flex align-items-center justify-content-center p-4" style="height: 150px;">
+                        <div class="bg-white d-flex align-items-center justify-content-center rounded mb-2" style="width: 60px; height: 60px;">
+                            <i class="fa fa-award text-primary"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="text-white mb-0">CREW</h5>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">260</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts Start -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h5 class="fw-bold text-primary text-uppercase">About Us</h5>
+                        <h1 class="mb-0">GTE – Engineering & Technical Solutions</h1>
+                    </div>
+                    <p class="mb-4">GTE – Groupement Traitement des Eaux – is a specialized engineering company delivering technical and industrial solutions across Algeria. We support professionals and industrial clients in the design, execution, inspection, and compliance of their technical installations.
+
+Backed by proven expertise and a highly qualified team, GTE operates with precision and high standards to ensure reliable, efficient, and fully compliant systems.</p>
+                    <div class="row g-0 mb-3">
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Industrial Plumbing</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>HVAC Systems</h5>
+                        </div>
+                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Air Extraction</h5>
+                            <h5 class="mb-3"><i class="fa fa-check text-primary me-3"></i>Aeraulic Testing</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-4 wow fadeIn" data-wow-delay="0.6s">
+                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+                            <i class="fa fa-phone-alt text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h5 class="mb-2">Call to ask any question</h5>
+                            <h4 class="text-primary mb-0">+213 770 63 61 06</h4>
+                            <h4 class="text-primary mb-0">+213 770 25 87 44</h4>
+                        </div>
+                    </div>
+                    <a href="quote.html" class="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Contact Us</a>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/image4x.png" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Features Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Why Choose Us</h5>
+                <h1 class="mb-0">We Deliver High-Quality Engineering Solution</h1>
+                    </div>
+    <!-- why choose us -->
+    <div class="row g-5">
+    <!-- SERVICE 1 -->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-tint text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s1 active"></div><div class="bg-slide s1"></div><div class="bg-slide s1"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">Water Treatment</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow"> Tailored solutions to purify, soften, and recycle your water, ensuring full compliance with health and environmental standards.</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="waterfiltering.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 2 -->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-wind text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s2 active"></div><div class="bg-slide s2"></div><div class="bg-slide s2"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">HVAC and Smoke Extraction</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow">Expertise in thermal regulation and ventilation for optimal comfort, combined with high-performance smoke extraction systems for your safety.</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="hvac.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 3 -->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-stream text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s3 active"></div><div class="bg-slide s3"></div><div class="bg-slide s3"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">Piping</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow">Design and installation of robust industrial piping networks, suitable for transporting all types of fluids under high pressure.</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="piping.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 4 -->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-shower text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s4 active"></div><div class="bg-slide s4"></div><div class="bg-slide s4"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">Plomberie</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow">nstallation and maintenance of reliable sanitary networks, combining hydraulic efficiency with equipment durability.</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="plomberie.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICE 5 -->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-layer-group text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s5 active"></div><div class="bg-slide s5"></div><div class="bg-slide s5"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">Insulation and Mechanical Protection</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow">Optimization of your energy performance through thermal insulation and durable protection of your infrastructure against impact and corrosion.</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="calorifuge.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- SERVICE 6-->
+    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+        <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center position-relative overflow-hidden">
+            <div class="service-icon mb-3 z-10 position-relative"><i class="fa fa-fire-extinguisher text-white"></i></div>
+            <div class="position-absolute inset-0">
+                <div class="bg-slide s5 active"></div><div class="bg-slide s5"></div><div class="bg-slide s5"></div>
+            </div>
+            <div class="position-relative z-10 px-3">
+                <h4 class="mb-3 text-dark fw-bold drop-shadow">Fire Safety</h4>
+                <p class="m-0 text-muted small lh-sm drop-shadow">Integral protection of your sites through state-of-the-art detection and automatic extinction systems (sprinklers, standpipes).</p>
+                <a class="btn btn-lg btn-primary rounded mt-2" href="incendie.html"><i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Quote Start -->
+    
+    <!-- Quote End -->
+
+
+   <!-- Testimonial Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                
+                <h1 class="mb-0">What Our Clients Say About Our Services</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/MARIOT.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Mariotte</h4>
+                            <small class="text-uppercase">Hotel Beb Zouar</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                         “Best choice for engineering services”
+We hired them for a complete system installation, and the results exceeded expectations. Strongly recommended for professional projects. ⭐⭐⭐⭐⭐
+
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/client1.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Bonatti</h4>
+                            <small class="text-uppercase">International Contractor for Energy Industry </small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        “Professional from start to finish”
+Clear communication, fair pricing, and excellent workmanship. They handled our industrial plumbing project flawlessly. ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/client2.jpg" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Cieptal</h4>
+                            <small class="text-uppercase">Engineering, and Construction Company</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Reliable and trustworthy company”
+We’ve worked with them on multiple projects, including water treatment systems. Every time, they deliver high-quality results on schedule ⭐⭐⭐⭐⭐
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/client3.png" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Algeria Airlines</h4>
+                            <small class="text-uppercase">Algeria’s national airline</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Top-quality installation work”
+Their HVAC installation was done perfectly. Everything works smoothly, and the attention to detail was impressive. You can tell they really know what they’re doing. ⭐⭐⭐⭐⭐
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- Vendor Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h5 class="fw-bold text-center text-uppercase" style="position: relative; top: 50px;">
+        Nos Références
+    </h5>
+</div>
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/client1.png" alt="">
+                    <img src="img/client2.jpg" alt="">
+                    <img src="img/client3.png" alt="">  
+                    <img src="img/client5.png" alt="">
+                    <img src="img/client6.png" alt="">
+                    <img src="img/client7.png" alt="">
+                    <img src="img/client8.png" alt="">
+                    <img src="img/client9.png" alt="">
+                    <img src="img/client10.png" alt="">
+                    <img src="img/client11.png" alt="">
+                    <img src="img/client12.png" alt="">
+                    <img src="img/client13.png" alt="">
+                    <img src="img/client14.png" alt="">
+                    <img src="img/client15.png" alt="">
+                    <img src="img/client16.png" alt="">
+                    <img src="img/client17.png" alt="">
+                    <img src="img/client18.png" alt="">
+                    <img src="img/client19.png" alt="">
+                    <img src="img/client20.png" alt="">
+                    <img src="img/client33.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+    
+
+    <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-4 col-md-6 pt-5 mb-5">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h3 class="text-light mb-0">About GTE</h3>
+                </div>
+               <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>General management</a>
+                             <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 63 61 06  </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">malek.ouldouali@gmail.com</p>
+                        </div>
+                          <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">contact@wad-dz.com</p>
+                        </div>
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>comercial 01</a>
+                             <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 560 81 82 67 </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">ahlem.sahi@wad-dz.com</p>
+                        </div>
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>comercial 02</a>
+                              <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 560 70 95 92 </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">selma.oumchiche@wad-dz.com</p>
+                        </div>
+
+                        
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                            <a class="text-light" ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        </div>
+                
+                
+            </div>
+            
+
+            <div class="col-lg-8 col-md-6">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Get In Touch</h3>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <p class="mb-0">Head office : villa A21  Garidi 01 Kouba Alger 16000</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-arrow-right text-primary me-2"></i>
+                            <p class="mb-0">Technical Direction </p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">hamadache.salaheddine@gmail.com</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">contact@gte-process.cim</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 63 61 06  </p>
+                            
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 25 87 44  </p>
+                            
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+021 98 51 26  </p>
+                            
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/share/1PMKxYqSga"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/gteengineering1"><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Quick Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                            <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                            <a class="text-light mb-2" href="service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                            <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                            <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Popular Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="hvac.html"><i class="bi bi-arrow-right text-primary me-2"></i>HVAC Systems</a>
+                            <a class="text-light mb-2" href="waterfiltering.html"><i class="bi bi-arrow-right text-primary me-2"></i>Water Filtering</a>
+                            <a class="text-light mb-2" href="incendie.html"><i class="bi bi-arrow-right text-primary me-2"></i>Incendie</a>
+                            <a class="text-light mb-2" href="piping.html"><i class="bi bi-arrow-right text-primary me-2"></i>Piping</a>
+                            <a class="text-light mb-2" href="plomberie.html"><i class="bi bi-arrow-right text-primary me-2"></i>Plomberie</a>
+                            <a class="text-light" href="calorifuge.html"><i class="bi bi-arrow-right text-primary me-2"></i>Calorifuge</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        </div>
+
+<div class="container-fluid text-white" style="background: #061429;">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6">
+                <div class="d-flex align-items-center justify-content-center" style=" height: 75px;">
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="index.html">GTE</a>. All Rights Reserved. 
+                    Designed by <a class="text-white border-bottom" href="#">GTE IT TEAM</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/fix-navbar.js"></script>
+
+    <!-- Translation Engine — EN / FR only, parallel fetch -->
+    <script>
+    (function () {
+        var SKIP_TAGS = new Set(['SCRIPT','STYLE','NOSCRIPT','IFRAME','SVG','PATH','IMG','VIDEO','CANVAS','INPUT','TEXTAREA','SELECT','BUTTON','OPTION']);
+        var overlay    = document.getElementById('translate-overlay');
+        var overlayMsg = document.getElementById('translate-overlay-msg');
+        var currentLang = 'en';
+
+        function getTextNodes() {
+            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode: function (node) {
+                    if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    var parent = node.parentElement;
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+                    if (SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#gteLangMenu') || parent.closest('#langBtn')) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#translate-overlay')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            var nodes = [], node;
+            while ((node = walker.nextNode())) nodes.push(node);
+            return nodes;
+        }
+
+        var API = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&dt=t&q=';
+        var GTE_FR_OVERRIDES = { 'home': 'Accueil' };
+        function translateText(text, lang) {
+            if (lang === 'fr') {
+                var __k = text.trim().toLowerCase();
+                if (GTE_FR_OVERRIDES.hasOwnProperty(__k)) {
+                    return Promise.resolve(text.replace(text.trim(), GTE_FR_OVERRIDES[__k]));
+                }
+            }
+            return fetch(API + encodeURIComponent(text) + '&tl=' + lang)
+                .then(function (r) { return r.json(); })
+                .then(function (d) { return d[0].map(function (s) { return s[0]; }).join(''); })
+                .catch(function () { return text; });
+        }
+
+        async function translatePage(lang) {
+            if (lang === currentLang) { closeLangMenu(); return; }
+            overlayMsg.textContent = lang === 'fr' ? 'Traduction en cours…' : 'Translating…';
+            overlay.classList.add('active');
+            var nodes = getTextNodes();
+            nodes.forEach(function (node) { if (!node._originalText) node._originalText = node.nodeValue; });
+            try {
+                if (lang === 'en') {
+                    nodes.forEach(function (node) { node.nodeValue = node._originalText; });
+                } else {
+                    var results = await Promise.all(nodes.map(function (node) { return translateText(node._originalText, lang); }));
+                    results.forEach(function (translated, i) { nodes[i].nodeValue = translated; });
+                }
+                currentLang = lang;
+                var btn = document.getElementById('langBtn');
+                if (btn) btn.innerHTML = (lang === 'fr' ? '🇫🇷' : '🇬🇧') + ' ' + lang.toUpperCase() + ' ▾';
+                try { localStorage.setItem('gte_lang', lang); } catch(e) {}
+            } catch (err) { console.warn('Translation failed:', err); }
+            overlay.classList.remove('active');
+            closeLangMenu();
+        }
+
+        function closeLangMenu() { var menu = document.getElementById('gteLangMenu'); if (menu) menu.style.display = 'none'; }
+        document.addEventListener('click', function (e) { if (!e.target.closest('#langBtn') && !e.target.closest('#gteLangMenu')) closeLangMenu(); });
+        window.switchLang = function (lang) { translatePage(lang); };
+        window.addEventListener('load', function () {
+            try { var saved = localStorage.getItem('gte_lang'); if (saved && saved !== 'en') translatePage(saved); } catch(e) {}
+        });
+    })();
+    </script>
+
+</body>
+
+</html>
