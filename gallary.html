@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/fix-navbar.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>GTE - Services</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GTE Engineering Services" name="keywords">
+    <meta content="GTE Engineering & Technical Solutions" name="description">
+
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- ===== Android / mobile responsive enhancements (non-structural, CSS only) ===== -->
+    <style id="gte-mobile-enhancements">
+        /* Prevent horizontal scrolling and keep media inside the viewport */
+        @media (max-width: 991.98px) {
+            html { -webkit-text-size-adjust: 100%; }
+            body { overflow-x: hidden; }
+            img, video, iframe, table { max-width: 100%; }
+            .container, .container-fluid { padding-left: 16px; padding-right: 16px; }
+
+            /* Logo scales down so the header stays compact on phones */
+            .navbar-logo { height: 70px !important; }
+            .navbar.custom-navbar,
+            nav.navbar { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+            /* Collapsed (hamburger) menu: solid, readable, scrollable for long lists */
+            .navbar-collapse {
+                background: #1a2e4a;
+                border-radius: 12px;
+                margin-top: 12px;
+                padding: 8px 14px 14px;
+                max-height: 78vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                box-shadow: 0 12px 40px rgba(0,0,0,.45);
+            }
+            .navbar-nav .nav-link { padding-top: 11px !important; padding-bottom: 11px !important; }
+            .navbar .dropdown-menu { background: rgba(255,255,255,.06); border: 0; }
+            .navbar .dropdown-item { white-space: normal; }
+
+            /* Oversized display headings rescaled so text never overflows on small screens */
+            .display-1 { font-size: 2.3rem !important; line-height: 1.18; word-wrap: break-word; }
+            .display-2 { font-size: 2.0rem !important; line-height: 1.18; }
+            .display-3 { font-size: 1.85rem !important; line-height: 1.2; }
+            .display-4 { font-size: 1.7rem !important; line-height: 1.2; }
+
+            /* Hero carousel caption: keep content padded and CTAs stacked neatly */
+            .carousel-caption { padding-left: 14px; padding-right: 14px; }
+            .carousel-caption .btn { margin-bottom: 8px; }
+
+            /* Embedded maps / videos get a sensible mobile height */
+            iframe[src*="google.com/maps"],
+            iframe[src*="youtube.com"],
+            iframe.h-100 { min-height: 280px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .navbar-logo { height: 58px !important; }
+            .display-1 { font-size: 1.85rem !important; }
+            .display-2 { font-size: 1.7rem !important; }
+            .display-3 { font-size: 1.55rem !important; }
+            .display-4 { font-size: 1.45rem !important; }
+            h1, .h1 { font-size: 1.7rem; }
+            h2, .h2 { font-size: 1.4rem; }
+            .carousel-caption h5 { font-size: 0.85rem; }
+            /* Stack hero buttons full-width for easier tapping */
+            .carousel-caption .btn { display: block; width: 100%; margin-right: 0 !important; }
+        }
+    </style>
+    <!-- ===== end mobile responsive enhancements ===== -->
+
+    <!-- Translation overlay styles -->
+    <style>
+        #translate-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(9,30,62,0.55); z-index: 99990;
+            align-items: center; justify-content: center;
+            flex-direction: column; gap: 16px; backdrop-filter: blur(3px);
+        }
+        #translate-overlay.active { display: flex; }
+        #translate-overlay .tl-spinner {
+            width: 48px; height: 48px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top-color: #fff; border-radius: 50%;
+            animation: tl-spin 0.7s linear infinite;
+        }
+        #translate-overlay p { color:#fff; font-family:'Rubik',sans-serif; font-size:0.95rem; margin:0; letter-spacing:1px; }
+        @keyframes tl-spin { to { transform: rotate(360deg); } }
+    </style>
+
+</head>
+
+<body>
+    <!-- Translation Loading Overlay -->
+    <div id="translate-overlay">
+        <div class="tl-spinner"></div>
+        <p id="translate-overlay-msg">Translating…</p>
+    </div>
+
+
+    <!-- ── PREMIUM WATER DROP CURSOR ── -->
+    <div id="pgWaterCursor">
+      <div class="pgc-ring2"></div>
+      <div class="pgc-ring"></div>
+      <div class="pgc-drop">
+        <svg width="100%" height="100%" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="dropGrad" cx="30%" cy="32%" r="65%">
+              <stop offset="0%"   stop-color="#a8e6ff" stop-opacity="0.95"/>
+              <stop offset="55%"  stop-color="#3ab0ff" stop-opacity="0.85"/>
+              <stop offset="100%" stop-color="#1a5fff" stop-opacity="0.9"/>
+            </radialGradient>
+            <radialGradient id="dropGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"   stop-color="#60c8ff" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#1a5fff" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <!-- glow halo -->
+          <ellipse cx="14" cy="22" rx="13" ry="13" fill="url(#dropGlow)" opacity="0.7"/>
+          <!-- drop body -->
+          <path d="M14 2 C14 2, 26 16, 26 23 C26 30.18 20.63 35 14 35 C7.37 35 2 30.18 2 23 C2 16 14 2 14 2Z"
+                fill="url(#dropGrad)" opacity="0.92"/>
+          <!-- inner highlight -->
+          <ellipse cx="10" cy="18" rx="3.5" ry="5" fill="white" opacity="0.35" transform="rotate(-20 10 18)"/>
+          <!-- tiny specular dot -->
+          <circle cx="9" cy="15" r="1.5" fill="white" opacity="0.6"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- ═══════════════════════════════════════
+         TOPBAR  (original — untouched)
+    ═══════════════════════════════════════ -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>KOUBA ALGER 16000</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+213 770 63 61 06 / +213 770 25 87 44
+                    </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>CONTACT@GTE-PROCESS.COM</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1PMKxYqSga/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/gteengineering1?igsh=YXU2MHc0aWx3aDNh"><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- ═══════════════════════════════════════
+         NAVBAR  (original — untouched)
+    ═══════════════════════════════════════ -->
+    <div class="container-fluid position-relative p-1" style="z-index: 9;">
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar px-5 py-4 fixed-top">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="img/lg fin.png" alt="GTE Logo" class="navbar-logo" style="height: 120px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="hvac.html"           class="dropdown-item">HVAC Systems</a>
+                            <a href="waterfiltering.html" class="dropdown-item">Water Treatment</a>
+                            <a href="incendie.html"        class="dropdown-item">Incendie</a>
+                            <a href="calorifuge.html"      class="dropdown-item">Calorifuge</a>
+                            <a href="plomberie.html"       class="dropdown-item">Plomberie</a>
+                            <a href="piping.html"          class="dropdown-item">Piping</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="feature.html"     class="dropdown-item">Our features</a>
+                            <a href="team.html"         class="dropdown-item">Team Members</a>
+                            <a href="quote.html"        class="dropdown-item">Free Quote</a>
+                            <a href="gallary2.html" class="dropdown-item">Gallery</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+               
+                <!-- Language Switcher (EN / FR only) -->
+                <div style="position:relative; margin-left:12px; z-index:99999;">
+                    <button id="langBtn"
+                        onclick="var m=document.getElementById('gteLangMenu'); m.style.display=m.style.display==='block'?'none':'block'"
+                        style="background:rgba(255,255,255,0.15);
+                               border:1px solid rgba(255,255,255,0.4);
+                               color:#fff; border-radius:6px;
+                               padding:8px 16px; font-size:13px;
+                               font-weight:600; cursor:pointer;">
+                        🌐 EN ▾
+                    </button>
+                    <div id="gteLangMenu"
+                        style="display:none; position:absolute; top:calc(100% + 8px); right:0;
+                               background:#1a2e4a; border:1px solid rgba(255,255,255,0.2);
+                               border-radius:10px; min-width:150px; z-index:99999;
+                               box-shadow:0 12px 40px rgba(0,0,0,0.6); overflow:hidden;">
+                        <a href="javascript:void(0)" onclick="switchLang('en')"
+                            style="display:block; padding:13px 18px; color:#fff; font-size:14px;
+                                   text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            🇬🇧 &nbsp; English
+                        </a>
+                        <a href="javascript:void(0)" onclick="switchLang('fr')"
+                            style="display:block; padding:13px 18px; color:#fff;
+                                   font-size:14px; text-decoration:none;">
+                            🇫🇷 &nbsp; Français
+                        </a>
+                    </div>
+                </div>
+
+                <a href="https://wad-dz.com/" target="_blank" class="btn btn-primary py-2 px-4 ms-3">OUR DEVISIONS</a>
+            </div>
+        </nav>
+
+        
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9,30,62,.7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         SERVICES SECTION TITLE  (original)
+    ═══════════════════════════════════════ -->
+    
+
+
+    <!-- ═══════════════════════════════════════
+         PREMIUM INFINITE GALLERY  (middle)
+    ═══════════════════════════════════════ -->
+
+    <style>
+    /* ── RESET SCOPE ── */
+    #pGallery *, #pGallery *::before, #pGallery *::after {
+      box-sizing: border-box; margin: 0; padding: 0;
+    }
+
+    #pGallery {
+      position: relative;
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      background: #03080f;
+      padding: 180px 0 90px;
+      overflow: hidden;
+      --blue:  #1a5fff;
+      --gold:  #c9a84c;
+      --dim:   rgba(255,255,255,0.06);
+    }
+
+    /* grain overlay */
+    #pGallery::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 1; opacity: 0.55;
+    }
+
+    /* ── HEADER ── */
+    #pGallery .pg-head {
+      position: relative; z-index: 10;
+      text-align: center; margin-bottom: 44px; padding: 0 24px;
+    }
+    #pGallery .pg-eyebrow {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.32em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 10px;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+    }
+    #pGallery .pg-eyebrow::before, #pGallery .pg-eyebrow::after {
+      content: ''; height: 1px; width: 56px;
+      background: linear-gradient(to right, transparent, var(--gold));
+    }
+    #pGallery .pg-eyebrow::after { background: linear-gradient(to left, transparent, var(--gold)); }
+
+    #pGallery .pg-headline {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(30px, 4.5vw, 54px);
+      font-weight: 300; color: #e8eef8;
+      line-height: 1.1; letter-spacing: 0.01em;
+    }
+    #pGallery .pg-headline em {
+      font-style: italic; color: #fff; font-weight: 600;
+    }
+
+    /* ── TABS ── */
+    #pGallery .pg-tabs {
+      position: relative; z-index: 10;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; padding: 0 24px; margin-bottom: 48px;
+    }
+    #pGallery .pg-tab {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.42);
+      background: var(--dim);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 40px; padding: 9px 22px;
+      cursor: pointer; white-space: nowrap; outline: none;
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    #pGallery .pg-tab:hover { color: rgba(255,255,255,0.75); border-color: rgba(26,95,255,0.35); }
+    #pGallery .pg-tab.active {
+      color: #fff; border-color: var(--blue);
+      background: linear-gradient(135deg, rgba(26,95,255,0.28), rgba(13,58,191,0.14));
+      box-shadow: 0 0 22px rgba(26,95,255,0.28), inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    #pGallery .pg-tab-dot {
+      display: inline-block; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--gold);
+      margin-right: 8px; vertical-align: middle;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    #pGallery .pg-tab.active .pg-tab-dot { opacity: 1; }
+
+    /* ── SVG WATER DEFS ── */
+    #pGallery .pg-svg-defs { position: absolute; width: 0; height: 0; pointer-events: none; }
+
+    /* ── GALLERY AREA ── */
+    #pGallery .pg-gallery {
+      position: relative; z-index: 5;
+    }
+    #pGallery .pg-gallery::before,
+    #pGallery .pg-gallery::after {
+      content: ''; position: absolute; top: 0; bottom: 0;
+      width: 140px; z-index: 20; pointer-events: none;
+    }
+    #pGallery .pg-gallery::before { left:  0; background: linear-gradient(to right, #03080f, transparent); }
+    #pGallery .pg-gallery::after  { right: 0; background: linear-gradient(to left,  #03080f, transparent); }
+
+    /* ── PANELS ── */
+    #pGallery .pg-panel { display: none; flex-direction: column; gap: 18px; }
+    #pGallery .pg-panel.active { display: flex; }
+
+    /* ── TRACKS ── */
+    #pGallery .pg-track-wrap { overflow: hidden; }
+    #pGallery .pg-track {
+      display: flex; gap: 18px; width: max-content; will-change: transform;
+    }
+    #pGallery .pg-track.fwd { animation: pgScrollL var(--dur, 42s) linear infinite; }
+    #pGallery .pg-track.rev { animation: pgScrollR var(--dur, 54s) linear infinite; }
+
+    @keyframes pgScrollL { from { transform: translateX(0);    } to { transform: translateX(-50%); } }
+    @keyframes pgScrollR { from { transform: translateX(-50%); } to { transform: translateX(0);    } }
+
+    #pGallery .pg-gallery:hover .pg-track { animation-play-state: paused; }
+
+    /* ── IMAGE CARD ── */
+    #pGallery .pg-img-card {
+      flex-shrink: 0; position: relative;
+      border-radius: 14px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.07);
+      cursor: pointer; height: 340px; background: #0a1425;
+      transition: border-color 0.4s, box-shadow 0.4s;
+    }
+    #pGallery .pg-img-card:hover {
+      border-color: rgba(26,95,255,0.5);
+      box-shadow: 0 12px 50px rgba(26,95,255,0.22), 0 2px 10px rgba(0,0,0,0.7);
+    }
+    #pGallery .pg-img-card img {
+      display: block; height: 100%;
+      width: auto; min-width: 280px; max-width: 500px;
+      object-fit: cover; object-position: center;
+      filter: url(#waterDistort) brightness(0.86) saturate(1.08);
+      transition: filter 0.5s, transform 0.6s;
+    }
+    #pGallery .pg-img-card:hover img {
+      filter: url(#waterDistortH) brightness(1.05) saturate(1.2);
+      transform: scale(1.13);
+    }
+    #pGallery .pg-img-card .pg-shim {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(26,95,255,0) 0%, rgba(26,95,255,0.13) 50%, rgba(26,95,255,0) 100%);
+      opacity: 0; transition: opacity 0.4s; pointer-events: none;
+    }
+    #pGallery .pg-img-card:hover .pg-shim { opacity: 1; }
+
+    #pGallery .pg-img-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 32px 16px 14px;
+      background: linear-gradient(to top, rgba(3,8,15,0.88) 0%, transparent 100%);
+      display: flex; align-items: center; gap: 10px;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.35s, transform 0.35s;
+    }
+    #pGallery .pg-img-card:hover .pg-img-label { opacity: 1; transform: translateY(0); }
+    #pGallery .pg-img-label-line { width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    #pGallery .pg-img-label-text {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+    }
+
+    /* ── CONTROLS ── */
+    #pGallery .pg-controls {
+      position: relative; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
+      gap: 24px; margin-top: 44px; padding: 0 24px;
+    }
+    #pGallery .pg-svc-prev, #pGallery .pg-svc-next {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.55); font-size: 13px;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.25s; outline: none;
+    }
+    #pGallery .pg-svc-prev:hover, #pGallery .pg-svc-next:hover {
+      background: rgba(26,95,255,0.22); border-color: var(--blue);
+      color: #fff; transform: scale(1.1);
+    }
+    #pGallery .pg-svc-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 300; font-style: italic;
+      color: rgba(255,255,255,0.72); text-align: center; min-width: 220px;
+    }
+    #pGallery .pg-svc-label strong {
+      display: block; font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; font-style: normal; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 3px;
+    }
+
+    /* divider rule */
+    #pGallery .pg-rule {
+      position: relative; z-index: 10;
+      display: flex; align-items: center; gap: 16px;
+      max-width: 420px; margin: 0 auto 44px; padding: 0 24px;
+    }
+    #pGallery .pg-rule-line {
+      flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(26,95,255,0.38), transparent);
+    }
+    #pGallery .pg-rule-icon { font-size: 14px; color: rgba(26,95,255,0.5); }
+
+    #pGallery .pg-count-badge {
+      position: relative; z-index: 10;
+      text-align: center; margin-top: 20px;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px; letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2); text-transform: uppercase;
+    }
+
+    /* ── HIDE DEFAULT CURSOR OVER GALLERY ── */
+    #pGallery, #pGallery * { cursor: auto !important; }
+    </style>
+
+    <!-- ── PREMIUM WATER DROP CURSOR STYLES ── -->
+    <style>
+    #pgWaterCursor {
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 999999;
+      will-change: transform;
+      display: none;
+    }
+
+    /* Main drop body */
+    #pgWaterCursor .pgc-drop {
+      position: relative;
+      width: 28px; height: 36px;
+      transition: width 0.25s cubic-bezier(0.34,1.56,0.64,1),
+                  height 0.25s cubic-bezier(0.34,1.56,0.64,1);
+                  opacity: 0;
+    }
+    #pgWaterCursor.on-card .pgc-drop {
+      width: 40px; height: 52px;
+    }
+
+    /* Outer glow ring */
+    #pgWaterCursor .pgc-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(26,180,255,0.28);
+      transform: translate(-50%,-50%) scale(1);
+      transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1),
+                  opacity  0.3s,
+                  border-color 0.3s;
+      opacity: 0.7;
+    }
+    #pgWaterCursor.on-card .pgc-ring {
+      transform: translate(-50%,-50%) scale(1.7);
+      border-color: rgba(26,180,255,0.55);
+      opacity: 1;
+      display: none !important;
+    }
+
+    /* Second pulsing ring */
+    #pgWaterCursor .pgc-ring2 {
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(26,180,255,0.12);
+      transform: translate(-50%,-50%) scale(1);
+      animation: pgcPulse 2.2s ease-out infinite;
+      opacity: 0;
+    }
+    @keyframes pgcPulse {
+      0%   { transform: translate(-50%,-50%) scale(0.8); opacity: 0.6; }
+      100% { transform: translate(-50%,-50%) scale(2.4); opacity: 0;   }
+    }
+
+    /* Falling drip particles */
+    .pgc-drip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999998;
+      border-radius: 50% 50% 60% 60%;
+      background: radial-gradient(ellipse at 35% 30%, rgba(120,210,255,0.9), rgba(26,95,255,0.6));
+      animation: pgcFall var(--fall-dur, 0.9s) ease-in forwards;
+    }
+    @keyframes pgcFall {
+      0%   { transform: translateY(0) scaleX(1) scaleY(1); opacity: 0.85; }
+      60%  { transform: translateY(calc(var(--fall-dist,60px))) scaleX(0.8) scaleY(1.2); opacity: 0.5; }
+      100% { transform: translateY(calc(var(--fall-dist,60px) * 1.6)) scaleX(1.3) scaleY(0.4); opacity: 0; }
+    }
+
+    /* Splash burst when entering a card */
+    .pgc-splash {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999997;
+      border-radius: 50%;
+      border: 1.5px solid rgba(100,200,255,0.7);
+      transform: scale(0);
+      animation: pgcSplash 0.55s ease-out forwards;
+    }
+    @keyframes pgcSplash {
+      0%   { transform: scale(0);   opacity: 0.8; }
+      100% { transform: scale(3.5); opacity: 0;   }
+    }
+    </style>
+
+    <!-- SVG Water Filters -->
+    <svg style="position:absolute;width:0;height:0;pointer-events:none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="waterDistort" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+          <feTurbulence id="pgTurb" type="fractalNoise" baseFrequency="0.009 0.018" numOctaves="3" seed="8" result="noise"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <filter id="waterDistortH" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+          <feTurbulence id="pgTurbH" type="fractalNoise" baseFrequency="0.006 0.013" numOctaves="3" seed="3" result="noise2"/>
+          <feDisplacementMap in="SourceGraphic" in2="noise2" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+    </svg>
+
+    <div id="pGallery">
+
+      <!-- Header -->
+      <div class="pg-head">
+        <div class="pg-eyebrow">Portfolio</div>
+        <h2 class="pg-headline">Engineering <em>Excellence</em><br>In Every Project</h2>
+      </div>
+
+      <!-- Divider -->
+      <div class="pg-rule">
+        <div class="pg-rule-line"></div>
+        <span class="pg-rule-icon"><i class="fa-solid fa-droplet"></i></span>
+        <div class="pg-rule-line"></div>
+      </div>
+
+      <!-- Service Tabs -->
+      <div class="pg-tabs" id="pgTabs"></div>
+
+      <!-- Gallery -->
+      <div class="pg-gallery" id="pgGallery"></div>
+
+      <!-- Controls -->
+      <div class="pg-controls">
+        <button class="pg-svc-prev" id="pgPrev" aria-label="Previous service">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <div class="pg-svc-label" id="pgLabel">
+          <strong>Service</strong>
+          <span id="pgLabelName"></span>
+        </div>
+        <button class="pg-svc-next" id="pgNext" aria-label="Next service">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <div class="pg-count-badge" id="pgCountBadge"></div>
+    </div>
+    <!-- END #pGallery -->
+
+
+        </div>
+    </div>
+    <!-- Service Section End -->
+
+
+    <!-- ═══════════════════════════════════════
+         TESTIMONIAL  (original — untouched)
+    ═══════════════════════════════════════ -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">Testimonial</h5>
+                <h1 class="mb-0">What Our Clients Say About Our Services</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/MARIOT.png" style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">MARIOT</h4>
+                            <small class="text-uppercase">HOTEL BEB ZOUAR</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Reliable, professional, and highly skilled team. GTE exceeded our expectations.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">review</div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">review</div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="img/testimonial-4.jpg" style="width: 60px; height: 60px;">
+                        <div class="ps-4">
+                            <h4 class="text-primary mb-1">Client Name</h4>
+                            <small class="text-uppercase">Profession</small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">review</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+
+    <!-- ═══════════════════════════════════════
+         VENDOR  (original — untouched)
+    ═══════════════════════════════════════ -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/vendor-1.jpg" alt="">
+                    <img src="img/vendor-2.jpg" alt="">
+                    <img src="img/vendor-3.jpg" alt="">
+                    <img src="img/vendor-4.jpg" alt="">
+                    <img src="img/vendor-5.jpg" alt="">
+                    <img src="img/vendor-6.jpg" alt="">
+                    <img src="img/vendor-7.jpg" alt="">
+                    <img src="img/vendor-8.jpg" alt="">
+                    <img src="img/vendor-9.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+
+
+    <!-- ═══════════════════════════════════════
+    <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-4 col-md-6 footer-about">
+                <div class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-primary p-4">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 text-white">GTE</h1>
+                    </a>
+                    <p class="mt-3 mb-4">CONTACT US</p>
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-3" placeholder="Your Email">
+                            <button class="btn btn-dark">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-6">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Get In Touch</h3>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <p class="mb-0">KOUBA ALGER 16000</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">CONTACT@GTE-PROCESS.COM</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 63 61 06</p>
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/share/1PMKxYqSga"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/gteengineering1"><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Quick Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                            <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                            <a class="text-light mb-2" href="Gallary.html"><i class="bi bi-arrow-right text-primary me-2"></i>Gallery</a>
+                            <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                            <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Popular Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>HVAC Systems</a>
+                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Water Filtering</a>
+                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Incendie</a>
+                            <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Piping</a>
+                            <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Plomberie</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid text-white" style="background: #061429;">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6">
+                <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">GTE</a>. All Rights Reserved. 
+                    Designed by <a class="text-white border-bottom" href="#">GTE IT TEAM</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer End -->
+    <!-- Back to Top -->
+    
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/fix-navbar.js"></script>
+
+
+    <!-- ═══════════════════════════════════════
+         GALLERY SCRIPT
+    ═══════════════════════════════════════ -->
+    <script>
+    (function () {
+
+      var SVC = [
+        {
+          name: "HVAC Systems",
+          note: "Heating, Ventilation & Air Conditioning",
+          images: [
+            "imgser/hvc1.jpg","imgser/hvc2.jpg","imgser/hvc3.jpg",
+            "imgser/hvc4.jpg","imgser/hvc5.jpg","imgser/hvc6.jpg","imgser/hvc7.jpg"
+          ]
+        },
+        {
+          name: "Incendie",
+          note: "Fire Protection Systems",
+          images: [
+            "imgser/incendie1.jpg","imgser/incendie2.jpg","imgser/incendie3.jpg",
+            "imgser/incendie4.jpg","imgser/incendie5.jpg","imgser/incendie6.jpg",
+            "imgser/incendie7.jpg","imgser/incendie8.jpg","imgser/incendie9.jpg",
+            "imgser/incendie10.jpg","imgser/incendie11.jpg","imgser/incendie12.jpg","imgser/incendie13.jpg"
+          ]
+        },
+        {
+          name: "Calorifuge",
+          note: "Thermal Insulation Solutions",
+          images: [
+            "imgser/calorifuge1.jpg","imgser/calorifuge2.jpg","imgser/calorifuge3.jpg",
+            "imgser/calorifuge5.jpg","imgser/calorifuge6.jpg","imgser/calorifuge7.jpg",
+            "imgser/calorifuge8.jpg","imgser/calorifuge9.jpg"
+          ]
+        },
+        {
+          name: "Plomberie",
+          note: "Plumbing & Sanitation",
+          images: [
+            "imgser/plomberie1.jpg","imgser/plomberie2.jpg","imgser/plomberie4.jpg",
+            "imgser/plomberie5.jpg","imgser/plomberie6.jpg","imgser/plomberie7.jpg",
+            "imgser/plomberie8.jpg","imgser/plomberie9.jpg"
+          ]
+        },
+        {
+          name: "Traitement des Eaux",
+          note: "Water Treatment & Filtration",
+          images: [
+            "imgser/WATER1.jpg","imgser/WATER2.jpg","imgser/WATER3.jpg","imgser/WATER4.jpg",
+            "imgser/WATER5.jpg","imgser/WATER6.jpg","imgser/WATER7.jpg","imgser/WATER8.jpg"
+          ]
+        },
+        {
+          name: "Piping",
+          note: "Industrial Pipe Networks",
+          images: [
+            "imgser/piping1.jpg","imgser/piping2.jpg","imgser/piping3.jpg","imgser/piping4.jpg",
+            "imgser/piping5.jpg","imgser/piping6.jpg","imgser/piping7.jpg","imgser/piping8.jpg",
+            "imgser/piping9.jpg","imgser/piping10.jpg","imgser/piping11.jpg","imgser/piping12.jpg"
+          ]
+        }
+      ];
+
+      var current  = 0;
+      var tabsEl   = document.getElementById('pgTabs');
+      var gallEl   = document.getElementById('pgGallery');
+      var labelEl  = document.getElementById('pgLabelName');
+      var badgeEl  = document.getElementById('pgCountBadge');
+
+      /* ── BUILD TABS + PANELS ── */
+      SVC.forEach(function (svc, i) {
+
+        /* Tab button */
+        var tab = document.createElement('button');
+        tab.className = 'pg-tab' + (i === 0 ? ' active' : '');
+        tab.dataset.i = i;
+        tab.innerHTML = '<span class="pg-tab-dot"></span>' + svc.name;
+        tab.addEventListener('click', function () { switchTo(i); });
+        tabsEl.appendChild(tab);
+
+        /* Panel */
+        var panel = document.createElement('div');
+        panel.className = 'pg-panel' + (i === 0 ? ' active' : '');
+        panel.id = 'pgPanel' + i;
+
+        /* split images across 2 rows */
+        var r1 = [], r2 = [];
+        svc.images.forEach(function (s, j) { (j % 2 === 0 ? r1 : r2).push(s); });
+        if (!r2.length) r2 = r1.slice();
+
+        var d1 = Math.max(30, r1.length * 5.8) + 's';
+        var d2 = Math.max(38, r2.length * 6.5) + 's';
+
+        panel.appendChild(makeTrack(r1, 'fwd', d1, svc.note));
+        panel.appendChild(makeTrack(r2, 'rev', d2, svc.note));
+        gallEl.appendChild(panel);
+      });
+
+      /* ── BUILD ONE TRACK ── */
+      function makeTrack(imgs, dir, dur, note) {
+        var wrap  = document.createElement('div');
+        wrap.className = 'pg-track-wrap';
+        var track = document.createElement('div');
+        track.className = 'pg-track ' + dir;
+        track.style.setProperty('--dur', dur);
+
+        imgs.concat(imgs).forEach(function (src) {
+          var card = document.createElement('div');
+          card.className = 'pg-img-card';
+          card.innerHTML =
+            '<img src="' + src + '" alt="' + note + '" loading="lazy">' +
+            '<div class="pg-shim"></div>' +
+            '<div class="pg-img-label">' +
+              '<div class="pg-img-label-line"></div>' +
+              '<span class="pg-img-label-text">' + note + '</span>' +
+            '</div>';
+          track.appendChild(card);
+        });
+
+        wrap.appendChild(track);
+        return wrap;
+      }
+
+      /* ── SWITCH SERVICE ── */
+      function switchTo(idx) {
+        if (idx === current) return;
+        document.getElementById('pgPanel' + current).classList.remove('active');
+        document.getElementById('pgPanel' + idx).classList.add('active');
+        tabsEl.querySelectorAll('.pg-tab').forEach(function (t, i) {
+          t.classList.toggle('active', i === idx);
+        });
+        current = idx;
+        updateLabel();
+      }
+
+      function updateLabel() {
+        var s = SVC[current];
+        labelEl.textContent = s.name;
+        badgeEl.textContent = s.images.length + ' photos · ' + s.note;
+      }
+      updateLabel();
+
+      document.getElementById('pgPrev').addEventListener('click', function () {
+        switchTo((current - 1 + SVC.length) % SVC.length);
+      });
+      document.getElementById('pgNext').addEventListener('click', function () {
+        switchTo((current + 1) % SVC.length);
+      });
+
+      /* ── ANIMATE WATER FILTER ── */
+      var turb  = document.getElementById('pgTurb');
+      var turbH = document.getElementById('pgTurbH');
+      var t = 0;
+      (function tick() {
+        t += 0.00032;
+        turb.setAttribute('baseFrequency',
+          (0.009 + Math.sin(t * 0.6) * 0.002).toFixed(5) + ' ' +
+          (0.018 + Math.cos(t * 0.4) * 0.003).toFixed(5));
+        turbH.setAttribute('baseFrequency',
+          (0.006 + Math.cos(t * 0.5) * 0.002).toFixed(5) + ' ' +
+          (0.013 + Math.sin(t * 0.7) * 0.002).toFixed(5));
+        requestAnimationFrame(tick);
+      })();
+
+      /* ── KEYBOARD ── */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft')  document.getElementById('pgPrev').click();
+        if (e.key === 'ArrowRight') document.getElementById('pgNext').click();
+      });
+
+    })();
+    </script>
+
+    <!-- ── WATER DROP CURSOR ENGINE ── -->
+    <script>
+    (function () {
+      var cursor    = document.getElementById('pgWaterCursor');
+      var gallery   = document.getElementById('pGallery');
+      if (!cursor || !gallery) return;
+
+      var mx = 0, my = 0;         /* raw mouse */
+      var cx = 0, cy = 0;         /* lerped cursor */
+      var inGallery   = false;
+      var onCard      = false;
+      var lastDripAt  = 0;
+      var lastCardEl  = null;
+
+      /* ── smooth follow ── */
+      function loop() {
+        cx += (mx - cx) * 0.14;
+        cy += (my - cy) * 0.14;
+        cursor.style.transform = 'translate(' + (cx - 14) + 'px,' + (cy - 18) + 'px)';
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+
+      /* ── mouse tracking ── */
+      document.addEventListener('mousemove', function (e) {
+        mx = e.clientX;
+        my = e.clientY;
+
+        var rect = gallery.getBoundingClientRect();
+        var inside = (
+          e.clientX >= rect.left && e.clientX <= rect.right &&
+          e.clientY >= rect.top  && e.clientY <= rect.bottom
+        );
+
+        if (inside !== inGallery) {
+          inGallery = inside;
+          cursor.style.display = inside ? 'block' : 'none';
+        }
+        if (!inGallery) return;
+
+        /* spawn drips while moving */
+        var now = Date.now();
+        var card = e.target.closest('.pg-img-card');
+
+        /* detect entering new card → splash */
+        if (card && card !== lastCardEl) {
+          spawnSplash(e.clientX, e.clientY);
+          lastCardEl = card;
+        }
+        if (!card) lastCardEl = null;
+
+        /* drips: faster on card */
+        var interval = card ? 60 : 130;
+        if (now - lastDripAt > interval) {
+          spawnDrip(e.clientX, e.clientY, !!card);
+          lastDripAt = now;
+        }
+
+        /* cursor state */
+        var isCard = !!card;
+        if (isCard !== onCard) {
+          onCard = isCard;
+          cursor.classList.toggle('on-card', onCard);
+        }
+      });
+
+      /* ── spawn a falling drip ── */
+      function spawnDrip(x, y, big) {
+        var d = document.createElement('div');
+        d.className = 'pgc-drip';
+        var size     = big ? (6 + Math.random() * 9) : (3 + Math.random() * 5);
+        var offX     = (Math.random() - 0.5) * (big ? 28 : 14);
+        var fallDist = big ? (55 + Math.random() * 55) : (35 + Math.random() * 35);
+        var dur      = big ? (0.75 + Math.random() * 0.45) : (0.5 + Math.random() * 0.35);
+
+        d.style.cssText = [
+          'left:'      + (x + offX - size / 2) + 'px',
+          'top:'       + (y + 14) + 'px',
+          'width:'     + size + 'px',
+          'height:'    + (size * 1.35) + 'px',
+          '--fall-dist:' + fallDist + 'px',
+          '--fall-dur:'  + dur + 's',
+          'opacity:0.8'
+        ].join(';');
+
+        document.body.appendChild(d);
+        d.addEventListener('animationend', function () { d.remove(); });
+      }
+
+      /* ── splash ring when entering a card ── */
+      function spawnSplash(x, y) {
+        var sz = 22;
+        var s  = document.createElement('div');
+        s.className = 'pgc-splash';
+        s.style.cssText = [
+          'left:'   + (x - sz / 2) + 'px',
+          'top:'    + (y - sz / 2) + 'px',
+          'width:'  + sz + 'px',
+          'height:' + sz + 'px'
+        ].join(';');
+        document.body.appendChild(s);
+        s.addEventListener('animationend', function () { s.remove(); });
+      }
+
+    })();
+    </script>
+
+    <!-- Translation Engine — EN / FR only, parallel fetch -->
+    <script>
+    (function () {
+        var SKIP_TAGS = new Set(['SCRIPT','STYLE','NOSCRIPT','IFRAME','SVG','PATH','IMG','VIDEO','CANVAS','INPUT','TEXTAREA','SELECT','BUTTON','OPTION']);
+        var overlay    = document.getElementById('translate-overlay');
+        var overlayMsg = document.getElementById('translate-overlay-msg');
+        var currentLang = 'en';
+
+        function getTextNodes() {
+            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode: function (node) {
+                    if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    var parent = node.parentElement;
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+                    if (SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#gteLangMenu') || parent.closest('#langBtn')) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#translate-overlay')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            var nodes = [], node;
+            while ((node = walker.nextNode())) nodes.push(node);
+            return nodes;
+        }
+
+        var API = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&dt=t&q=';
+        var GTE_FR_OVERRIDES = { 'home': 'Accueil' };
+        function translateText(text, lang) {
+            if (lang === 'fr') {
+                var __k = text.trim().toLowerCase();
+                if (GTE_FR_OVERRIDES.hasOwnProperty(__k)) {
+                    return Promise.resolve(text.replace(text.trim(), GTE_FR_OVERRIDES[__k]));
+                }
+            }
+            return fetch(API + encodeURIComponent(text) + '&tl=' + lang)
+                .then(function (r) { return r.json(); })
+                .then(function (d) { return d[0].map(function (s) { return s[0]; }).join(''); })
+                .catch(function () { return text; });
+        }
+
+        async function translatePage(lang) {
+            if (lang === currentLang) { closeLangMenu(); return; }
+            overlayMsg.textContent = lang === 'fr' ? 'Traduction en cours…' : 'Translating…';
+            overlay.classList.add('active');
+            var nodes = getTextNodes();
+            nodes.forEach(function (node) { if (!node._originalText) node._originalText = node.nodeValue; });
+            try {
+                if (lang === 'en') {
+                    nodes.forEach(function (node) { node.nodeValue = node._originalText; });
+                } else {
+                    var results = await Promise.all(nodes.map(function (node) { return translateText(node._originalText, lang); }));
+                    results.forEach(function (translated, i) { nodes[i].nodeValue = translated; });
+                }
+                currentLang = lang;
+                var btn = document.getElementById('langBtn');
+                if (btn) btn.innerHTML = (lang === 'fr' ? '🇫🇷' : '🇬🇧') + ' ' + lang.toUpperCase() + ' ▾';
+                try { localStorage.setItem('gte_lang', lang); } catch(e) {}
+            } catch (err) { console.warn('Translation failed:', err); }
+            overlay.classList.remove('active');
+            closeLangMenu();
+        }
+
+        function closeLangMenu() { var menu = document.getElementById('gteLangMenu'); if (menu) menu.style.display = 'none'; }
+        document.addEventListener('click', function (e) { if (!e.target.closest('#langBtn') && !e.target.closest('#gteLangMenu')) closeLangMenu(); });
+        window.switchLang = function (lang) { translatePage(lang); };
+        window.addEventListener('load', function () {
+            try { var saved = localStorage.getItem('gte_lang'); if (saved && saved !== 'en') translatePage(saved); } catch(e) {}
+        });
+    })();
+    </script>
+
+</body>
+</html>
