@@ -1377,7 +1377,7 @@
                 /* Update button label */
                 var btn = document.getElementById('langBtn');
                 if (btn) {
-                    btn.innerHTML = (lang === 'fr' ? '🇫🇷' : '🇬🇧') + ' ' + lang.toUpperCase() + ' ▾';
+                    btn.textContent = lang.toUpperCase() + ' ▾';
                 }
 
                 /* Persist preference */

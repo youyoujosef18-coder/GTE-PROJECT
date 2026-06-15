@@ -491,7 +491,7 @@
                 }
                 currentLang = lang;
                 var btn = document.getElementById('langBtn');
-                if (btn) btn.innerHTML = (lang === 'fr' ? '🇫🇷' : '🇬🇧') + ' ' + lang.toUpperCase() + ' ▾';
+                if (btn) btn.textContent = lang.toUpperCase() + ' ▾';
                 try { localStorage.setItem('gte_lang', lang); } catch(e) {}
             } catch (err) { console.warn('Translation failed:', err); }
             overlay.classList.remove('active');
