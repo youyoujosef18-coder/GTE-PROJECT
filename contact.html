@@ -296,7 +296,11 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
                     <h4 class="mb-4">fill in information below we will reach out in the next 24h <a href=""></a></h4>
-                    <form action="https://formspree.io/f/xlgayzkn" method="POST" class="bg-light p-4 rounded">
+                    <!-- ===== GTE CONTACT FORM (Web3Forms email + admin feed, same look) ===== -->
+                    <form id="gteContactForm" action="https://api.web3forms.com/submit" method="POST" class="bg-light p-4 rounded">
+
+    <!-- Web3Forms access key -->
+    <input type="hidden" name="access_key" value="62bfb841-84db-4f11-8736-83a935b10fdd">
 
     <!-- Name -->
     <div class="mb-3">
@@ -331,18 +335,18 @@
         <textarea name="message" rows="5" class="form-control" placeholder="Your Message" required></textarea>
     </div>
 
-    <!-- Hidden (optional but PRO) -->
-    <input type="hidden" name="_subject" value="New GTE Website Request">
-    <input type="hidden" name="_captcha" value="false">
+    <!-- Hidden (Web3Forms) -->
+    <input type="hidden" name="subject" value="New GTE Website Request">
+    <input type="hidden" name="from_name" value="GTE Website">
+    <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
     <!-- Button -->
     <button type="submit" class="btn btn-primary w-100">
         Send Request
     </button>
-<input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
-
 
 </form>
+                    <!-- ===== end GTE CONTACT FORM ===== -->
                 </div>
                 <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
                     <iframe class="position-relative rounded w-100 h-100"
@@ -554,6 +558,71 @@
         });
     })();
     </script>
+
+    <!-- ===== GTE lead capture: saves to the admin (localStorage key: wad_leads) + sends to Web3Forms, no redirect ===== -->
+    <script>
+    (function () {
+        var form = document.getElementById('gteContactForm');
+        if (!form) return;
+
+        // ===== Your Google Apps Script Web App URL (ends with /exec) =====
+        var CLOUD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzWJAQPqHzJXTP67HEc5UO20kOGI7Izf70ZNLiVFoPrW0HiQtlCDuWLDSB4bZhEh1EYIg/exec';
+
+        function val(n){ var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) { form.reportValidity(); return; }
+
+            var record = {
+                id: 'L' + Date.now() + '_' + Math.random().toString(36).slice(2, 6),
+                date: new Date().toISOString(),
+                name: val('name'), email: val('email'), phone: val('phone'),
+                company: '', service: val('service'), message: val('message'),
+                status: 'new'
+            };
+
+            // 1) save locally (admin reads this on the same device)
+            try {
+                var arr = JSON.parse(localStorage.getItem('wad_leads') || '[]');
+                if (!Array.isArray(arr)) arr = [];
+                arr.push(record);
+                localStorage.setItem('wad_leads', JSON.stringify(arr));
+            } catch (err) {}
+
+            // 2) send to the central Google Sheet so the admin sees it from any device
+            if (CLOUD_ENDPOINT && CLOUD_ENDPOINT.indexOf('http') === 0) {
+                try {
+                    fetch(CLOUD_ENDPOINT, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                        body: JSON.stringify(record)
+                    });
+                } catch (err) {}
+            }
+
+            // 3) send to Web3Forms (email) without leaving the page
+            var btn = form.querySelector('button[type="submit"]');
+            var original = btn.innerHTML;
+            btn.disabled = true; btn.innerHTML = 'Sending…';
+            fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+                .then(function () { success(); })
+                .catch(function () { success(); })
+                .finally(function () { btn.disabled = false; btn.innerHTML = original; });
+        });
+
+        function success() {
+            form.innerHTML =
+                '<div class="text-center py-4">' +
+                '<div style="width:64px;height:64px;border-radius:50%;background:#e7f7f0;color:#1f9d6b;' +
+                'font-size:32px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">&#10003;</div>' +
+                '<h4 class="mb-2">Request sent</h4>' +
+                '<p class="text-muted mb-0">Thank you! We will get back to you within 24 hours.</p>' +
+                '</div>';
+        }
+    })();
+    </script>
+    <!-- ===== end GTE lead capture ===== -->
 
 </body>
 
