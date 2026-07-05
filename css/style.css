@@ -709,3 +709,25 @@ h6,
     box-shadow: 0 0 60px rgba(0, 242, 255, 0.35);
     filter: grayscale(0) brightness(1.1) contrast(1.1);
 } 
+.proj-header {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.proj-logo {
+  height: 100px;   /* adjust to your logo */
+  width: auto;
+   margin-top: -30px;   /* increase the number to move it higher */
+}
+
+/* ===== Continuous logo animations (always running) ===== */
+
+
+
+/* 6. Glow pulse (great on dark backgrounds) */
+.proj-logo { animation: logoFloat 3s ease-in-out infinite; }
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}

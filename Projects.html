@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="css/fix-navbar.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>GTE-PROJECTS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GTE projects, engineering Algeria, water treatment, HVAC, fire protection, piping" name="keywords">
+    <meta content="Selected GTE engineering projects across Algeria: water treatment, HVAC and smoke extraction, fire protection, piping and insulation." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- ===== Android / mobile responsive enhancements (non-structural, CSS only) ===== -->
+    <style id="gte-mobile-enhancements">
+        /* Prevent horizontal scrolling and keep media inside the viewport */
+        @media (max-width: 991.98px) {
+            html { -webkit-text-size-adjust: 100%; }
+            body { overflow-x: hidden; }
+            img, video, iframe, table { max-width: 100%; }
+            .container, .container-fluid { padding-left: 16px; padding-right: 16px; }
+
+            /* Logo scales down so the header stays compact on phones */
+            .navbar-logo { height: 70px !important; }
+            .navbar.custom-navbar,
+            nav.navbar { padding-left: 1rem !important; padding-right: 1rem !important; }
+
+            /* Collapsed (hamburger) menu: solid, readable, scrollable for long lists */
+            .navbar-collapse {
+                background: #1a2e4a;
+                border-radius: 12px;
+                margin-top: 12px;
+                padding: 8px 14px 14px;
+                max-height: 78vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                box-shadow: 0 12px 40px rgba(0,0,0,.45);
+            }
+            .navbar-nav .nav-link { padding-top: 11px !important; padding-bottom: 11px !important; }
+            .navbar .dropdown-menu { background: rgba(255,255,255,.06); border: 0; }
+            .navbar .dropdown-item { white-space: normal; }
+
+            /* Oversized display headings rescaled so text never overflows on small screens */
+            .display-1 { font-size: 2.3rem !important; line-height: 1.18; word-wrap: break-word; }
+            .display-2 { font-size: 2.0rem !important; line-height: 1.18; }
+            .display-3 { font-size: 1.85rem !important; line-height: 1.2; }
+            .display-4 { font-size: 1.7rem !important; line-height: 1.2; }
+
+            /* Hero carousel caption: keep content padded and CTAs stacked neatly */
+            .carousel-caption { padding-left: 14px; padding-right: 14px; }
+            .carousel-caption .btn { margin-bottom: 8px; }
+
+            /* Embedded maps / videos get a sensible mobile height */
+            iframe[src*="google.com/maps"],
+            iframe[src*="youtube.com"],
+            iframe.h-100 { min-height: 280px; }
+        }
+
+        @media (max-width: 575.98px) {
+            .navbar-logo { height: 58px !important; }
+            .display-1 { font-size: 1.85rem !important; }
+            .display-2 { font-size: 1.7rem !important; }
+            .display-3 { font-size: 1.55rem !important; }
+            .display-4 { font-size: 1.45rem !important; }
+            h1, .h1 { font-size: 1.7rem; }
+            h2, .h2 { font-size: 1.4rem; }
+            .carousel-caption h5 { font-size: 0.85rem; }
+            /* Stack hero buttons full-width for easier tapping */
+            .carousel-caption .btn { display: block; width: 100%; margin-right: 0 !important; }
+        }
+    </style>
+    <!-- ===== end mobile responsive enhancements ===== -->
+
+    <!-- Translation overlay styles -->
+    <style>
+        #translate-overlay {
+            display: none; position: fixed; inset: 0;
+            background: rgba(9,30,62,0.55); z-index: 99990;
+            align-items: center; justify-content: center;
+            flex-direction: column; gap: 16px; backdrop-filter: blur(3px);
+        }
+        #translate-overlay.active { display: flex; }
+        #translate-overlay .tl-spinner {
+            width: 48px; height: 48px;
+            border: 4px solid rgba(255,255,255,0.2);
+            border-top-color: #fff; border-radius: 50%;
+            animation: tl-spin 0.7s linear infinite;
+        }
+        #translate-overlay p { color:#fff; font-family:'Rubik',sans-serif; font-size:0.95rem; margin:0; letter-spacing:1px; }
+        @keyframes tl-spin { to { transform: rotate(360deg); } }
+    </style>
+
+    <!-- ===== GTE PROJECTS — page styles (scoped under .gte-projects) ===== -->
+    <style>
+        .gte-projects{ --pj-navy:#091E3E; --pj-navy2:#0B2A5B; --pj-blue:#1C7FA6; --pj-blue2:#185FA5;
+            --pj-gold:#E9C46A; --pj-light:#EEF9FF; --pj-soft:#5a6b82; font-family:'Rubik',sans-serif; }
+        .gte-projects .pj-intro{ text-align:center; max-width:760px; margin:0 auto 6px; }
+        .gte-projects .pj-intro .kick{ color:var(--pj-blue); font-weight:700; letter-spacing:3px; text-transform:uppercase; font-size:13px; }
+        .gte-projects .pj-intro h2{ color:var(--pj-navy); font-weight:800; margin:10px 0 14px; }
+        .gte-projects .pj-intro p{ color:var(--pj-soft); font-size:16px; }
+        .gte-projects .proj{ padding:60px 0; }
+        .gte-projects .proj.alt{ background:var(--pj-light); }
+        .gte-projects .proj-head{ margin-bottom:24px; }
+        .gte-projects .proj-num{ display:inline-block; font-weight:800; font-size:13px; letter-spacing:2px;
+            color:var(--pj-blue); border:1px solid rgba(28,127,166,.35); padding:5px 12px; border-radius:999px; margin-bottom:14px; }
+        .gte-projects .proj-title{ color:var(--pj-navy); font-weight:800; font-size:clamp(1.5rem,3vw,2.2rem);
+            margin:0 0 14px; line-height:1.15; }
+        .gte-projects .proj-title:after{ content:""; display:block; width:64px; height:4px; border-radius:4px;
+            background:linear-gradient(90deg,var(--pj-gold),var(--pj-blue)); margin-top:14px; }
+        .gte-projects .proj-meta{ display:flex; flex-wrap:wrap; gap:10px; }
+        .gte-projects .proj-meta span{ display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:600;
+            color:var(--pj-navy2); background:#fff; border:1px solid #dce8f2; padding:7px 13px; border-radius:999px; }
+        .gte-projects .proj-meta i{ color:var(--pj-blue); }
+        /* slideshow */
+        .gte-projects .proj-slider{ position:relative; width:100%; height:clamp(300px,60vh,640px);
+            border-radius:16px; overflow:hidden; background:var(--pj-navy); box-shadow:0 24px 60px rgba(9,30,62,.22); }
+        .gte-projects .proj-slide{ position:absolute; inset:0; opacity:0; visibility:hidden;
+            transition:opacity .9s ease, visibility .9s ease; }
+        .gte-projects .proj-slide.active{ opacity:1; visibility:visible; }
+        .gte-projects .proj-slide img{ width:100%; height:100%; object-fit:cover; transform:scale(1.06); will-change:transform; }
+        .gte-projects .proj-slide.active img{ animation:pjKen 7s ease-out forwards; }
+        @keyframes pjKen{ from{ transform:scale(1.06); } to{ transform:scale(1.15); } }
+        .gte-projects .proj-slide:before{ content:""; position:absolute; inset:0;
+            background:linear-gradient(to top, rgba(9,30,62,.45), rgba(9,30,62,0) 55%); }
+        .gte-projects .proj-nav{ position:absolute; top:50%; transform:translateY(-50%); z-index:3; width:46px; height:46px;
+            border-radius:50%; border:0; cursor:pointer; background:rgba(255,255,255,.92); color:var(--pj-navy);
+            font-size:24px; line-height:1; display:flex; align-items:center; justify-content:center;
+            box-shadow:0 6px 18px rgba(0,0,0,.25); transition:transform .15s, background .15s; }
+        .gte-projects .proj-nav:hover{ background:#fff; transform:translateY(-50%) scale(1.08); }
+        .gte-projects .proj-prev{ left:16px; } .gte-projects .proj-next{ right:16px; }
+        .gte-projects .proj-count{ position:absolute; top:16px; right:18px; z-index:3; background:rgba(9,30,62,.55);
+            color:#fff; font-size:12px; font-weight:700; letter-spacing:1px; padding:6px 12px; border-radius:999px; }
+        .gte-projects .proj-dots{ position:absolute; bottom:16px; left:50%; transform:translateX(-50%); z-index:3;
+            display:flex; gap:7px; max-width:80%; flex-wrap:wrap; justify-content:center; }
+        .gte-projects .proj-dot{ width:9px; height:9px; border-radius:50%; border:0; cursor:pointer; padding:0;
+            background:rgba(255,255,255,.45); transition:background .2s, width .2s, border-radius .2s; }
+        .gte-projects .proj-dot.active{ background:#fff; width:24px; border-radius:6px; }
+        .gte-projects .proj-desc{ margin-top:24px; max-width:920px; }
+        .gte-projects .proj-desc p{ color:var(--pj-soft); font-size:16px; line-height:1.7; margin:0 0 16px; }
+        .gte-projects .proj-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+        .gte-projects .proj-chips b{ font-weight:600; font-size:12px; color:var(--pj-blue2);
+            background:rgba(28,127,166,.10); border-radius:8px; padding:6px 12px; }
+        .gte-projects .pj-cta{ background:linear-gradient(135deg,var(--pj-navy),var(--pj-blue2)); border-radius:18px;
+            padding:46px 28px; text-align:center; color:#fff; }
+        .gte-projects .pj-cta h3{ font-weight:800; margin:0 0 10px; font-size:clamp(1.4rem,3vw,2rem); }
+        .gte-projects .pj-cta p{ opacity:.85; max-width:560px; margin:0 auto 22px; }
+        .gte-projects .pj-cta .btn-gold{ background:var(--pj-gold); color:var(--pj-navy); font-weight:700; border:0;
+            padding:13px 28px; border-radius:10px; text-decoration:none; display:inline-block; transition:transform .15s, filter .15s; }
+        .gte-projects .pj-cta .btn-gold:hover{ transform:translateY(-2px); filter:brightness(1.04); }
+        @media (prefers-reduced-motion: reduce){
+            .gte-projects .proj-slide.active img{ animation:none; transform:scale(1.06); } }
+    </style>
+    <!-- ===== end GTE PROJECTS styles ===== -->
+
+</head>
+
+<body>
+    <!-- Translation Loading Overlay -->
+    <div id="translate-overlay">
+        <div class="tl-spinner"></div>
+        <p id="translate-overlay-msg">Translating…</p>
+    </div>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>   KOUBA ALGER 16000</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>+213 770 63 61 06 / +213 770 25 87 44</small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>CONTACT@GTE-PROCESS.COM</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1PMKxYqSga/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/gteengineering1?igsh=YXU2MHc0aWx3aDNh"><i class="fab fa-instagram fw-normal"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-1" style="z-index: 9;">
+       <nav class="navbar navbar-expand-lg navbar-dark custom-navbar px-5 py-4 fixed-top">
+    <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img src="img/lg fin.png" alt="GTE Logo" class="navbar-logo" style="height: 120px;">
+    </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="projects.html" class="nav-item nav-link">Projects</a>
+
+                    <!-- ── SERVICES DROPDOWN ── -->
+                    <div class="nav-item dropdown">
+                        <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="hvac.html" class="dropdown-item">HVAC Systems</a>
+                            <a href="water filtering.html" class="dropdown-item">Water Treatment</a>
+                            <a href="incendie.html" class="dropdown-item">Incendie</a>
+                            <a href="calorifuge.html" class="dropdown-item">Calorifuge</a>
+                            <a href="plomberie.html" class="dropdown-item">Plomberie</a>
+                            <a href="piping.html" class="dropdown-item">Piping</a>
+                        </div>
+                    </div>
+                    <!-- ── END SERVICES DROPDOWN ── -->
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="projects.html" class="dropdown-item active">Projects</a>
+                            <a href="feature.html" class="dropdown-item">Our features</a>
+                            <a href="about.html" class="dropdown-item">Team Members</a>
+                            <a href="quote.html" class="dropdown-item">Free Quote</a>
+                            <a href="gallary.html" class="dropdown-item">Gallery</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                
+                <!-- Language Switcher (EN / FR only) -->
+                <div style="position:relative; margin-left:12px; z-index:99999;">
+                    <button id="langBtn"
+                        onclick="var m=document.getElementById('gteLangMenu'); m.style.display=m.style.display==='block'?'none':'block'"
+                        style="background:rgba(255,255,255,0.15);
+                               border:1px solid rgba(255,255,255,0.4);
+                               color:#fff; border-radius:6px;
+                               padding:8px 16px; font-size:13px;
+                               font-weight:600; cursor:pointer;">
+                        🌐 EN ▾
+                    </button>
+                    <div id="gteLangMenu"
+                        style="display:none; position:absolute; top:calc(100% + 8px); right:0;
+                               background:#1a2e4a; border:1px solid rgba(255,255,255,0.2);
+                               border-radius:10px; min-width:150px; z-index:99999;
+                               box-shadow:0 12px 40px rgba(0,0,0,0.6); overflow:hidden;">
+                        <a href="javascript:void(0)" onclick="switchLang('en')"
+                            style="display:block; padding:13px 18px; color:#fff; font-size:14px;
+                                   text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1);">
+                            🇬🇧 &nbsp; English
+                        </a>
+                        <a href="javascript:void(0)" onclick="switchLang('fr')"
+                            style="display:block; padding:13px 18px; color:#fff;
+                                   font-size:14px; text-decoration:none;">
+                            🇫🇷 &nbsp; Français
+                        </a>
+                    </div>
+                </div>
+
+                <a href="https://wad-dz.com/" target="_blank" class="btn btn-primary py-2 px-4 ms-3">OUR DEVISIONS</a>
+            </div>
+        </nav>
+
+        
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-dark animated zoomIn">Our Projects</h1>
+                    <a href="index.html" class="h5 text-dark">Home</a>
+                    <i class="far fa-circle text-dark px-2"></i>
+                    <a href="projects.html" class="h5 text-dark">Projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+        <!-- Projects Start -->
+    
+    <div class="gte-projects">
+        <div class="container-fluid pt-5">
+            <div class="container pt-3 pb-2">
+                <div class="pj-intro wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="kick">Réalisations</span>
+                    <h2>A Selection of Our Engineering Projects</h2>
+                    <p>From industrial water treatment to HVAC, fire protection and piping networks — a look at installations GTE has designed and delivered across Algeria.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 01</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">HCA Ain Naadja Military Hospital</h2>
+  <img src="img/client1.png" alt="HCA logo" class="proj-logo" />
+</div>
+
+                    <div class="proj-meta"><span><i class="fa fa-industry"></i> Caloriffuge </span><span><i class="fa fa-water"></i>HVAC</span><span><i class="fa fa-industry"></i> Plomberie</span><span><i class="fa fa-industry"></i>Fire Protection VRD Loop</span><span><i class="fa fa-industry"></i> Irrigation </span><span><i class="fa fa-map-marker-alt"></i> Algieria / Ain Naadja</span></div>
+                   &nbsp <p> Our team successfully delivered comprehensive HVAC, Thermal Insulation (Calorifuge), Plumbing, Fire Protection VRD Loop, and Irrigation works for the Ain Naadja Military Hospital, ensuring the highest standards of quality, safety, and operational reliability. The project involved the installation of energy-efficient HVAC systems, complete plumbing infrastructure, high-performance thermal insulation for mechanical networks, an external Fire Protection VRD Loop to provide reliable firefighting water distribution across the site, and a modern irrigation system designed to efficiently maintain the hospital's landscaped areas. Every phase of the project was executed with precision, using premium materials and in full compliance with international engineering standards, delivering durable and efficient mechanical infrastructure for one of Algeria's most important healthcare facilities.</p>
+                </div>
+                <div class="proj-slider wow fadeInUp" data-wow-delay="3s" data-project="0"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                    
+                </div>
+            </div>
+        </section>
+    
+       <section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 02</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">Marriotte Trust real estate bab ezzouar</h2>
+  <img src="img/logomariotte.png" alt="HCA logo" class="proj-logo" />
+</div>
+
+                    <div class="proj-meta"><span><i class="fa fa-industry"></i>cvc</span><span><i class="fa fa-water"></i> insulation </span><span><i class="fa fa-industry"></i>Plomberie</span><span><i class="fa fa-industry"></i>Fire Sprinkler System</span><span><i class="fa fa-industry"></i> Irrigation </span><span><i class="fa fa-map-marker-alt"></i> Algieria / Bab zouar</span></div>
+               &nbsp <p>Our team successfully executed a complete range of mechanical engineering works for the Marriott Trust Real Estate project, delivering high-quality installations that meet international standards for safety, performance, and long-term reliability.
+
+Scope of Work
+HVAC (Heating, Ventilation & Air Conditioning)
+
+Design and installation of high-performance HVAC systems to ensure optimal indoor comfort, energy efficiency, and reliable climate control throughout the facility. The works included chilled water piping, ventilation networks, equipment installation, balancing, testing, and commissioning.
+
+Thermal Insulation (Calorifuge)
+
+Supply and installation of premium thermal insulation for chilled water, hot water, and mechanical piping systems. The insulation minimizes energy loss, prevents condensation, improves system efficiency, and ensures compliance with international insulation standards.
+
+Plumbing
+
+Complete installation of domestic water supply and drainage networks, including stainless steel, PPR, PVC, and HDPE piping systems. The project covered sanitary installations, water distribution, pressure testing, commissioning, and quality assurance for reliable long-term operation.
+
+Fire Protection – Sprinkler System
+
+Installation of a complete automatic fire sprinkler system designed in accordance with international fire safety standards. The scope included sprinkler piping networks, valves, fittings, fire protection equipment, pressure testing, flushing, and system commissioning to ensure maximum protection of the facility and its occupants.
+
+Project Highlights
+Complete mechanical installation services
+High-quality materials and certified equipment
+Compliance with international engineering standards
+Energy-efficient and sustainable system design
+Precision installation and rigorous quality control
+Comprehensive testing and commissioning
+Reliable, safe, and long-lasting performance
+
+This project demonstrates our expertise in delivering integrated mechanical solutions for premium hospitality and commercial developments, ensuring exceptional quality, operational efficiency, and long-term reliability.</p>
+                <div class="proj-slider wow fadeInUp" data-wow-delay="3s" data-project="1"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                    
+                    <div class="proj-chips"><b>Thermal Regulation</b><b>Ventilation</b><b>Désenfumage</b><b>Aeraulic Testing</b></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 03</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">CSCEC Pole logestique a parking R+10</h2>
+  <img src="projects/logocscec.png" alt="HCA logo" class="proj-logo" />
+</div>
+&nbsp <p>Our team carried out the HVAC, Fire Protection Sprinkler System, VRD, and Plumbing works for the CSCEC Logistics Hub Parking Facility, delivering reliable mechanical and utility infrastructure tailored to the operational requirements of a modern logistics environment. The project included the installation of high-performance HVAC systems for effective ventilation and climate control, a complete automatic sprinkler fire protection system to enhance safety, comprehensive plumbing networks for water supply and drainage, and external VRD (Voirie et Réseaux Divers) works, including underground utility networks and site infrastructure. All installations were completed using high-quality materials and in accordance with international engineering and safety standards, ensuring long-term performance, efficiency, and reliability </p>
+                   <div class="proj-meta"><span><i class="fa fa-industry"></i>cvc</span><span><i class="fa fa-water"></i> vrd</span><span><i class="fa fa-industry"></i>Plomberie</span><span><i class="fa fa-industry"></i>Fire Sprinkler System</span><span><i class="fa fa-industry"></i> Irrigation </span><span><i class="fa fa-map-marker-alt"></i> Algieria / Bab zouar</span></div>&nbsp
+              
+                <div class="proj-slider wow fadeInUp" data-wow-delay="3s" data-project="2"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                    
+                   
+                </div>
+            </div>
+        </section>
+
+        <section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 04</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">MTM logestique Oran </h2>
+  <img src="projects/mtmlogo.png" alt="HCA logo" class="proj-logo" />
+</div>
+
+                    <div class="proj-meta"><span><i class="fa fa-industry"></i>cvc</span><span><i class="fa fa-water"></i> insulation </span><span><i class="fa fa-industry"></i>Plomberie</span><span><i class="fa fa-industry"></i>Fire Sprinkler System</span><span><i class="fa fa-industry"></i> Irrigation </span><span><i class="fa fa-map-marker-alt"></i> Algieria / Bab zouar</span></div>
+               &nbsp <p>Our company successfully completed the technical room installations for the villas at Residence d'État – Club des Pins, delivering high-quality mechanical systems that ensure reliable, efficient, and long-term operation. The project was executed in accordance with strict engineering specifications, with a strong commitment to quality, safety, precision, and on-time delivery, providing durable solutions that support the optimal performance of the villas' essential technical infrastructure.</p>
+                </div>
+                <div class="proj-slider wow fadeInUp" data-wow-delay="0.3s" data-project="3"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                </div>
+            </div>
+        </section>
+
+        <section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 05</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">Residence d'etat club des pins </h2>
+  <img src="projects/cfcelogo.png" alt="HCA logo" class="proj-logo" />
+</div>
+
+                    <div class="proj-meta"><span><i class="fa fa-industry"></i>Locaux technique des villa </span><span><span><i class="fa fa-industry"></i>Staoueli, Algiers Province</span></div>
+               &nbsp <p>For the MTM Logistics Facility in Oran, we carried out the Thermal Insulation (Calorifuge) works, helping improve the efficiency and reliability of the site's mechanical systems. Our team insulated the piping networks using high-quality materials to reduce heat loss, prevent condensation, and enhance overall energy performance. Every stage of the project was completed with great attention to detail and in line with industry standards, delivering a durable solution that supports long-term operational efficiency while reducing energy consumption and maintenance requirements.</p>
+                </div>
+                <div class="proj-slider wow fadeInUp" data-wow-delay="0.3s" data-project="4"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                </div>
+            </div>
+        </section>
+<section class="proj">
+            <div class="container">
+                <div class="proj-head wow fadeInUp" data-wow-delay="0.1s">
+                    <span class="proj-num">PROJECT 6</span>
+                    <div class="proj-header">
+  <h2 class="proj-title">MIMKOU Réfectoire a Oran chez TOSYALI </h2>
+  <img src="projects/mimko.png" alt="HCA logo" class="proj-logo" />
+</div>
+
+                    <div class="proj-meta"><span><i class="fa fa-industry"></i>Technical rooms of the villa</span><span><span><i class="fa fa-industry"></i>ORAN , Province</span></div>
+               &nbsp <p>For the MIMKOU Refectory at Tosyali – Oran, our team delivered comprehensive Plumbing, Thermal Insulation (Calorifuge), and Boiler Room (Chaufferie) services, ensuring reliable and efficient mechanical systems throughout the facility. The project included the installation of complete plumbing networks, high-performance thermal insulation to optimize energy efficiency and protect piping systems, and a fully integrated boiler room designed to provide a consistent and dependable hot water supply. By combining quality workmanship with certified materials and strict adherence to industry standards, we delivered a durable, energy-efficient solution that supports the daily operation of the facility with long-term reliability.</p>
+                </div>
+                <div class="proj-slider wow fadeInUp" data-wow-delay="0.3s" data-project="5"></div>
+                <div class="proj-desc wow fadeInUp" data-wow-delay="3s">
+                </div>
+            </div>
+        </section>
+        <div class="container-fluid py-5">
+            <div class="container py-4">
+                <div class="pj-cta wow fadeInUp" data-wow-delay="3s">
+                    <h3>Have a project in mind?</h3>
+                    <p>Tell us about your installation and our team will get back to you within 24 hours.</p>
+                    <a href="contact.html" class="btn-gold">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projects End -->
+
+
+    <!-- Vendor Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <h5 class="fw-bold text-center text-uppercase" style="position: relative; top: 50px;">
+        Nos Références
+    </h5>
+</div>
+
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5 mb-5">
+            <div class="bg-white">
+                <div class="owl-carousel vendor-carousel">
+                    <img src="img/client1.png" alt="">
+                    <img src="img/client2.jpg" alt="">
+                    <img src="img/client3.png" alt="">  
+                    <img src="img/client5.png" alt="">
+                    <img src="img/client6.png" alt="">
+                    <img src="img/client7.png" alt="">
+                    <img src="img/client8.png" alt="">
+                    <img src="img/client9.png" alt="">
+                    <img src="img/client10.png" alt="">
+                    <img src="img/client11.png" alt="">
+                    <img src="img/client12.png" alt="">
+                    <img src="img/client13.png" alt="">
+                    <img src="img/client14.png" alt="">
+                    <img src="img/client15.png" alt="">
+                    <img src="img/client16.png" alt="">
+                    <img src="img/client17.png" alt="">
+                    <img src="img/client18.png" alt="">
+                    <img src="img/client19.png" alt="">
+                    <img src="img/client20.png" alt="">
+                    <img src="img/client33.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor End -->
+
+
+   <!-- Footer Start -->
+   <div class="container-fluid bg-dark text-light mt-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-4 col-md-6 pt-5 mb-5">
+                <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                    <h3 class="text-light mb-0">About GTE</h3>
+                </div>
+               <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>General management</a>
+                             <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 63 61 06  </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">malek.ouldouali@gmail.com</p>
+                        </div>
+                          <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">contact@wad-dz.com</p>
+                        </div>
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>comercial 01</a>
+                             <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 560 81 82 67 </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">ahlem.sahi@wad-dz.com</p>
+                        </div>
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>comercial 02</a>
+                              <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 560 70 95 92 </p>
+                            
+                        </div>
+                         <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">selma.oumchiche@wad-dz.com</p>
+                        </div>
+
+                        
+                            <a class="text-light mb-2" ><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                            <a class="text-light" ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        </div>
+                
+                
+            </div>
+            
+
+            <div class="col-lg-8 col-md-6">
+                <div class="row gx-5">
+                    <div class="col-lg-4 col-md-12 pt-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Get In Touch</h3>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-geo-alt text-primary me-2"></i>
+                            <p class="mb-0">Head office : villa A21  Garidi 01 Kouba Alger 16000</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-arrow-right text-primary me-2"></i>
+                            <p class="mb-0">Technical Direction </p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">hamadache.salaheddine@gmail.com</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-envelope-open text-primary me-2"></i>
+                            <p class="mb-0">contact@gte-process.cim</p>
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 63 61 06  </p>
+                            
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+213 770 25 87 44  </p>
+                            
+                        </div>
+                        <div class="d-flex mb-2">
+                            <i class="bi bi-telephone text-primary me-2"></i>
+                            <p class="mb-0">+021 98 51 26  </p>
+                            
+                        </div>
+                        <div class="d-flex mt-4">
+                            <a class="btn btn-primary btn-square me-2" href="https://www.facebook.com/share/1PMKxYqSga"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square me-2" href="https://www.linkedin.com/in/salah-eddine-hamadache-89418013b"><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            <a class="btn btn-primary btn-square" href="https://www.instagram.com/gteengineering1"><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Quick Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="index.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                            <a class="text-light mb-2" href="about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                            <a class="text-light mb-2" href="team.html"><i class="bi bi-arrow-right text-primary me-2"></i>Meet The Team</a>
+                            <a class="text-light" href="contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
+                        <div class="section-title section-title-sm position-relative pb-3 mb-4">
+                            <h3 class="text-light mb-0">Popular Links</h3>
+                        </div>
+                        <div class="link-animated d-flex flex-column justify-content-start">
+                            <a class="text-light mb-2" href="hvac.html"><i class="bi bi-arrow-right text-primary me-2"></i>HVAC Systems</a>
+                            <a class="text-light mb-2" href="waterfiltering.html"><i class="bi bi-arrow-right text-primary me-2"></i>Water Filtering</a>
+                            <a class="text-light mb-2" href="incendie.html"><i class="bi bi-arrow-right text-primary me-2"></i>Incendie</a>
+                            <a class="text-light mb-2" href="piping.html"><i class="bi bi-arrow-right text-primary me-2"></i>Piping</a>
+                            <a class="text-light mb-2" href="plomberie.html"><i class="bi bi-arrow-right text-primary me-2"></i>Plomberie</a>
+                            <a class="text-light" href="calorifuge.html"><i class="bi bi-arrow-right text-primary me-2"></i>Calorifuge</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        </div>
+
+<div class="container-fluid text-white" style="background: #061429;">
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-6">
+                <div class="d-flex align-items-center justify-content-center" style=" height: 75px;">
+                    <p class="mb-0">&copy; <a class="text-white border-bottom" href="index.html">GTE</a>. All Rights Reserved. 
+                    Designed by <a class="text-white border-bottom" href="#">GTE IT TEAM</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/fix-navbar.js"></script>
+    <!-- Translation Engine — EN / FR only, parallel fetch -->
+    <script>
+    (function () {
+        var SKIP_TAGS = new Set(['SCRIPT','STYLE','NOSCRIPT','IFRAME','SVG','PATH','IMG','VIDEO','CANVAS','INPUT','TEXTAREA','SELECT','BUTTON','OPTION']);
+        var overlay    = document.getElementById('translate-overlay');
+        var overlayMsg = document.getElementById('translate-overlay-msg');
+        var currentLang = 'en';
+
+        function getTextNodes() {
+            var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+                acceptNode: function (node) {
+                    if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                    var parent = node.parentElement;
+                    if (!parent) return NodeFilter.FILTER_REJECT;
+                    if (SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#gteLangMenu') || parent.closest('#langBtn')) return NodeFilter.FILTER_REJECT;
+                    if (parent.closest('#translate-overlay')) return NodeFilter.FILTER_REJECT;
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            });
+            var nodes = [], node;
+            while ((node = walker.nextNode())) nodes.push(node);
+            return nodes;
+        }
+
+        var API = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&dt=t&q=';
+        var GTE_FR_OVERRIDES = { 'home': 'Accueil' };
+        function translateText(text, lang) {
+            if (lang === 'fr') {
+                var __k = text.trim().toLowerCase();
+                if (GTE_FR_OVERRIDES.hasOwnProperty(__k)) {
+                    return Promise.resolve(text.replace(text.trim(), GTE_FR_OVERRIDES[__k]));
+                }
+            }
+            return fetch(API + encodeURIComponent(text) + '&tl=' + lang)
+                .then(function (r) { return r.json(); })
+                .then(function (d) { return d[0].map(function (s) { return s[0]; }).join(''); })
+                .catch(function () { return text; });
+        }
+
+        async function translatePage(lang) {
+            if (lang === currentLang) { closeLangMenu(); return; }
+            overlayMsg.textContent = lang === 'fr' ? 'Traduction en cours…' : 'Translating…';
+            overlay.classList.add('active');
+            var nodes = getTextNodes();
+            nodes.forEach(function (node) { if (!node._originalText) node._originalText = node.nodeValue; });
+            try {
+                if (lang === 'en') {
+                    nodes.forEach(function (node) { node.nodeValue = node._originalText; });
+                } else {
+                    var results = await Promise.all(nodes.map(function (node) { return translateText(node._originalText, lang); }));
+                    results.forEach(function (translated, i) { nodes[i].nodeValue = translated; });
+                }
+                currentLang = lang;
+                var btn = document.getElementById('langBtn');
+                if (btn) btn.textContent = lang.toUpperCase() + ' ▾';
+                try { localStorage.setItem('gte_lang', lang); } catch(e) {}
+            } catch (err) { console.warn('Translation failed:', err); }
+            overlay.classList.remove('active');
+            closeLangMenu();
+        }
+
+        function closeLangMenu() { var menu = document.getElementById('gteLangMenu'); if (menu) menu.style.display = 'none'; }
+        document.addEventListener('click', function (e) { if (!e.target.closest('#langBtn') && !e.target.closest('#gteLangMenu')) closeLangMenu(); });
+        window.switchLang = function (lang) { translatePage(lang); };
+        window.addEventListener('load', function () {
+            try { var saved = localStorage.getItem('gte_lang'); if (saved && saved !== 'en') translatePage(saved); } catch(e) {}
+        });
+    })();
+    </script>
+
+        <!-- ===== Project slideshows (your animation style, smooth, auto-play, arrows + dots) ===== -->
+    <script>
+    (function () {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        function pad(n){ return (n < 10 ? '0' : '') + n; }
+
+        // ====== EDIT HERE: up to 20 image URLs per project (index 0 = Project 01) ======
+       var PROJECT_IMAGES = [
+    [
+        
+   // PROJECT 1
+    
+            'projects/hca1.jpg',
+            'projects/hca2.jpg',
+            'projects/hca3.jpg',
+            'projects/hca4.jpg',
+            'projects/hca5.jpg',
+            'projects/hca6.jpg',
+            'projects/hca7.jpg',
+            'projects/hca8.jpg',
+            'projects/hca9.jpg',
+            'projects/hca10.jpg',
+            'projects/hca11.jpg',
+            'projects/hca12.jpg',
+            'projects/hca13.jpg',
+            'projects/hca14.jpg',
+            'projects/hca15.jpg',
+            'projects/hca16.jpg',
+            'projects/hca17.jpg',
+            'projects/hca18.jpg',
+            'projects/hca19.jpg',
+            'projects/hca20.jpg',
+            'projects/hca21.png',
+            'projects/hca22.jpg',
+            'projects/hca23.png',
+            'projects/hca24.png',
+            'projects/hca25.png',
+            'projects/hca26.png',
+            'projects/hca27.jpeg',
+            
+        ],
+        [ // PROJECT 02 — photos
+            'projects/prjmariotte1.png',
+            'projects/prjmariotte2.png',
+            'projects/prjmariotte4.jpg',
+            'projects/prjmariotte5.jpg',
+            'projects/prjmariotte6.png',
+            'projects/prjmariotte7.png',
+            'projects/prjmariotte8.jpg',
+            'projects/prjmariotte9.png',
+            'projects/prjmariotte10.png',
+            'projects/prjmariotte11.png',
+            'projects/prjmariotte12.jpg',
+            'projects/prjmariotte13.jpg',
+            'projects/prjmariotte14.jpg',
+            'projects/prjmariotte15.jpg',
+        ],
+        [ // PROJECT 03 — photos
+            'projects/cscec1.jpg',
+            'projects/cscec2.jpg',
+            'projects/cscec3.jpg',
+            'projects/cscec4.jpg',
+            'projects/cscec5.jpg',
+            'projects/cscec6.jpg',
+            'projects/cscec7.jpg',
+            'projects/cscec8.jpg',
+            'projects/cscec9.jpeg',
+            'projects/cscec10.jpg',
+            'projects/cscec11.jpg',
+            'projects/cscec12.jpg',
+            'projects/cscec13.jpeg',
+            'projects/cscec14.jpg',
+            'projects/cscec15.jpg',
+            'projects/cscec16.jpg',
+            'projects/cscec17.jpeg',
+            'projects/cscec18.jpeg',
+            'projects/cscec19.jpeg',
+            'projects/cscec20.jpg',
+            'projects/cscec21.jpg',
+            'projects/cscec22.jpg',
+            'projects/cscec23.jpg',
+            'projects/cscec24.jpg',
+           
+        ],
+        [ // PROJECT 04 — MtM photos
+            'projects/mtm1.PNG',
+            'projects/mtm2.PNG',
+            'projects/mtm3.PNG',
+            'projects/mtm4.PNG',
+            'projects/mtm5.PNG',
+            'projects/mtm6.PNG',
+            'projects/mtm8.PNG',
+            
+            
+        ],
+        [ // PROJECT 05 — photos (Résidence d'État — Club des Pins)
+           'projects/cfce1.jpeg',
+            'projects/cfce2.jpg',
+            'projects/cfce3.jpeg',
+            'projects/cfce4.jpeg',
+            
+        ],
+        [ // PROJECT 06 — photos (MIMKOU Réfectoire Oran chez TOSYALI) — REPLACE with real filenames
+            'projects/mimkou2.png',
+            'projects/mimkou3.png',
+            'projects/mimkou4.png',
+            'projects/mimkou5.png',
+            'projects/mimkou6.png',
+            'projects/mimkou7.png',
+            'projects/mimkou8.png',
+            'projects/mimkou9.png',
+            'projects/mimkou10.png',
+            'projects/mimkou11.png',
+            'projects/mimkou12.png',
+            'projects/mimkou13.png',
+            'projects/mimkou14.png',
+            'projects/mimkou15.png',
+
+
+           
+            
+        ]
+    ];
+        // ================================================================================
+
+        document.querySelectorAll('.gte-projects .proj-slider').forEach(function (slider) {
+            var p = parseInt(slider.getAttribute('data-project'), 10) || 0;
+            var imgs = PROJECT_IMAGES[p] || [];
+            if (!imgs.length) return;
+
+            var slidesHtml = imgs.map(function (src, idx) {
+                return '<div class="proj-slide' + (idx === 0 ? ' active' : '') + '">' +
+                       '<img loading="lazy" src="' + src + '" alt="Project photo ' + (idx + 1) + '"></div>';
+            }).join('');
+            var dotsHtml = imgs.map(function (_, idx) {
+                return '<button class="proj-dot' + (idx === 0 ? ' active' : '') + '" data-i="' + idx + '" aria-label="Slide ' + (idx + 1) + '"></button>';
+            }).join('');
+
+            slider.innerHTML =
+                slidesHtml +
+                '<button class="proj-nav proj-prev" aria-label="Previous">&#8249;</button>' +
+                '<button class="proj-nav proj-next" aria-label="Next">&#8250;</button>' +
+                '<div class="proj-count"><span class="cur">01</span> / ' + pad(imgs.length) + '</div>' +
+                '<div class="proj-dots">' + dotsHtml + '</div>';
+
+            var slides = slider.querySelectorAll('.proj-slide');
+            var dots   = slider.querySelectorAll('.proj-dot');
+            var curEl  = slider.querySelector('.proj-count .cur');
+            var i = 0, timer = null;
+
+            function show(n) {
+                slides[i].classList.remove('active'); dots[i].classList.remove('active');
+                i = (n + slides.length) % slides.length;
+                slides[i].classList.add('active'); dots[i].classList.add('active');
+                curEl.textContent = pad(i + 1);
+            }
+            function go(n) { show(n); restart(); }
+            function start() { if (!reduce && slides.length > 1) timer = setInterval(function () { show(i + 1); }, 4800); }
+            function restart() { clearInterval(timer); start(); }
+
+            slider.querySelector('.proj-next').addEventListener('click', function () { go(i + 1); });
+            slider.querySelector('.proj-prev').addEventListener('click', function () { go(i - 1); });
+            slider.querySelector('.proj-dots').addEventListener('click', function (e) {
+                var b = e.target.closest('.proj-dot'); if (b) go(parseInt(b.getAttribute('data-i'), 10));
+            });
+            slider.addEventListener('mouseenter', function () { clearInterval(timer); });
+            slider.addEventListener('mouseleave', start);
+
+            start();
+        });
+    })();
+    </script>
+    <!-- ===== end project slideshows ===== -->
+
+</body>
+
+</html>
